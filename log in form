@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form method="post" action="login.php">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+
+
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Replace this with your actual username and password validation logic
+    $validUsername = 'your_username';
+    $validPassword = 'your_password';
+
+    if ($username === $validUsername && $password === $validPassword) {
+        // Successful login
+        echo "Login successful. Welcome, $username!";
+    } else {
+        // Failed login
+        echo "Login failed. Please check your credentials.";
+    }
+}
+?>
+
+
+
+
+
